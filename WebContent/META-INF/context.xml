@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context swallowOutput="false" crossContext="true" >
+  <Resource 
+      name="jdbc/userauth" auth="Container"
+      type="javax.sql.DataSource" 
+      driverClassName="org.apache.derby.jdbc.ClientDriver" 
+      url="jdbc:derby://localhost:1527/Lesson14;create=true"
+      maxTotal="15" maxIdle="5" maxWait="30000" initialSize="5" 
+      removeAbandoned="true" removeAbandonedTimeout="120"   
+      testOnBorrow="true" validationQuery="SELECT COUNT(*) FROM Users"
+      timeBetweenEvictionRunsMillis="1200000" minEvictableIdleTimeMillis="600000" 
+      factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" validationInterval="30000"
+   />
+</Context>
