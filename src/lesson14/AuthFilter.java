@@ -36,7 +36,7 @@ public class AuthFilter implements Filter {
 		
 		//if there is no user in the current session, and the request is not for the "login" or "authentication" pages, 
 		//redirect the user to the login screen with some message.
-		if (null==sessionUser &&
+		if (null == sessionUser &&
 			httpRequest.getRequestURI().indexOf("auth.jsp")==-1 && 
 			httpRequest.getRequestURI().indexOf("login.jsp")==-1 
     		) {

@@ -1,0 +1,60 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background: #648dad;
+}
+
+form {
+	background: #FFFFFF;
+	margin: auto;
+	position: relative;
+	width: 550px;
+	height: 450px;
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: bold;
+	color: #1a2a42;
+	text-decoration: none;
+	padding: 10px;
+	border: 1px solid #999;
+	border: inset 1px solid #333;
+	-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	-moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.welcome {
+	text-align: center;
+	color: #1a2a42;
+	font-size: 20px;
+}
+
+#options h3 {
+	text-align: center;
+}
+
+#options ul li {
+	/* background: #333333; */
+	display: inline; 
+	float: left;
+	padding: 10px; 
+	border-style: solid 1px #333333;
+}
+
+
+
+
+#welcome, #options, #select, #select1, #select2 {
+	margin-left: 75px;
+	width: 375px;
+	float: left;
+}
+
+#select, #select1, #select2 {
+	
+	
+	margin-top: 30px;
+}
+#select2 h4 {
+	text-align: center;
+}

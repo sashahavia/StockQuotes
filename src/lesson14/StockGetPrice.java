@@ -17,8 +17,10 @@ public class StockGetPrice {
 		InputStreamReader inStream = null;
 		BufferedReader buff  = null;
 		try{
-			url  = new URL("http://quote.yahoo.com/d/quotes.csv?s="
-							+ symbol + "&f=sl1d1t1c1ohgv&e=.csv" );
+//			url  = new URL("http://quote.yahoo.com/d/quotes.csv?s="
+//							+ symbol + "&f=sl1d1t1c1ohgv&e=.csv" ); // Does not work anymore
+			url = new URL("https://marketdata.websol.barchart.com/getQuote.csv?apikey=bb2ed98c5122be7a685b47bb0cb56796&symbols="
+							+ symbol + "%2CGOOG&fields=fiftyTwoWkHigh%2CfiftyTwoWkHighDate%2CfiftyTwoWkLow%2CfiftyTwoWkLowDate&mode=I&jerq=false");
 			urlConn = url.openConnection();
 		} catch(IOException ioe){
 			ioe.printStackTrace();
@@ -27,9 +29,8 @@ public class StockGetPrice {
 			inStream = new InputStreamReader(urlConn.getInputStream());
 			buff = new BufferedReader(inStream);
 			// get the quote as a csv string
-			csvString = buff.readLine();  
-//			System.out.println(csvString);
-			
+			csvString = buff.readLine(); 
+			csvString = buff.readLine(); 
 			price = cleanUpString(csvString);
 		} catch(MalformedURLException e){
 			System.out.println("Please check the spelling of " 
@@ -46,11 +47,10 @@ public class StockGetPrice {
    } 
 	
 	public static String cleanUpString(String csv){
-		// Parse the csv string using StringTokenizer
-		StringTokenizer tokenizer = new StringTokenizer(csv, ",");
-		String ticker = tokenizer.nextToken();
-		String price  = tokenizer.nextToken();
-		ticker = ticker.replaceAll("\"", "");
+		// Parse the csv string using Split
+		String[] split = csv.split(",");
+		String price  = split[6];
+		price = price.replaceAll("\"", "");
 		return price;
 	}
 }
